@@ -6,22 +6,30 @@
     .controller('UsersController', UsersController);
 
   /** @ngInject */
-  function UsersController(usersService) {
+  function UsersController(usersService, $stateParams) {
     var uc = this;
-    usersService.getUsers().then(function (result) {
-      uc.user = null;
-      uc.users = result;
-    }, function (e) {
-      console.log(e);
-    });
 
-    function getUser(login){
+    uc.userName = $stateParams.userName;
+    uc.getUser = function(login){
       console.log(login);
       usersService.getUser(login).then(function (result) {
-        uc.user = result;
+        uc.currentUser = result;
+        uc.userName = uc.currentUser.login;
+        console.log(uc.currentUser)
       }, function (e) {
         console.log(e);
       });
+    };
+
+    if (!uc.userName) {
+      usersService.getUsers().then(function (result) {
+        uc.users = result;
+      }, function (e) {
+        console.log(e);
+      });
+    }
+    else{
+      uc.getUser(uc.userName )
     }
 
 
