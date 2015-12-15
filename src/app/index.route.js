@@ -15,10 +15,16 @@
         controllerAs: 'main'
       })
       .state('users', {
-        url: '/users/:userName',
+        url: '/users',
         templateUrl: 'app/extended/users.html',
         controller: 'UsersController',
         controllerAs: 'users'
+      })
+      .state('user', {
+        url: '/users/:userName',
+        templateUrl: 'app/extended/users.html',
+        controller: 'UsersController',
+        controllerAs: 'user'
       })
       .state('about', {
           url: '/about',
