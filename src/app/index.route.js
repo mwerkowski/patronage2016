@@ -15,7 +15,7 @@
         controllerAs: 'main'
       })
       .state('users', {
-        url: '/users',
+        url: '/users?id',
         templateUrl: 'app/extended/users.html',
         controller: 'UsersController',
         controllerAs: 'users'
@@ -24,7 +24,7 @@
         url: '/users/:userName',
         templateUrl: 'app/extended/users.html',
         controller: 'UsersController',
-        controllerAs: 'user'
+        controllerAs: 'users'
       })
       .state('about', {
           url: '/about',
