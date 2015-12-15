@@ -22,6 +22,9 @@
           <h2 ng-if="users.userName" class="mdl-card__title-text">User {{users.userName}} :</h2>
         </div>
         <div class="mdl-card__supporting-text">
+            <p ng-if="users.users">select index:
+              <input type="number" min="0" ng-model="users.id" ng-change="users.getUsers()"/>
+            </p>
           <ul ng-if="users.users">
             <li ng-repeat="user in users.users" >
               <a ng-href="#/users/{{user.login}}" ng-click="users.getUser(user.login)" >{{user.login}}</a>

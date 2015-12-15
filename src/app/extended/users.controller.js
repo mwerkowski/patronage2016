@@ -8,30 +8,32 @@
   /** @ngInject */
   function UsersController(usersService, $stateParams) {
     var uc = this;
-
+    uc.id = parseInt($stateParams.id);
     uc.userName = $stateParams.userName;
+
     uc.getUser = function(login){
-      console.log(login);
       usersService.getUser(login).then(function (result) {
         uc.currentUser = result;
         uc.userName = uc.currentUser.login;
-        console.log(uc.currentUser)
+      }, function (e) {
+        console.log(e);
+      });
+    };
+
+    uc.getUsers = function(){
+      usersService.getUsers(uc.id-1).then(function (result) {
+        uc.users = result;
       }, function (e) {
         console.log(e);
       });
     };
 
     if (!uc.userName) {
-      usersService.getUsers().then(function (result) {
-        uc.users = result;
-      }, function (e) {
-        console.log(e);
-      });
+      uc.getUsers();
     }
     else{
-      uc.getUser(uc.userName )
+      uc.getUser(uc.userName)
     }
-
 
   }
 
