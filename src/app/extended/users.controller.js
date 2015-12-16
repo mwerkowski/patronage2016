@@ -6,33 +6,33 @@
     .controller('UsersController', UsersController);
 
   /** @ngInject */
-  function UsersController(usersService, $stateParams) {
-    var uc = this;
-    uc.id = parseInt($stateParams.id);
-    uc.userName = $stateParams.userName;
+  function UsersController(usersService, $stateParams, $log) {
+    var vm = this;
+    vm.id = parseInt($stateParams.id);
+    vm.userName = $stateParams.userName;
 
-    uc.getUser = function(login){
+    vm.getUser = function(login){
       usersService.getUser(login).then(function (result) {
-        uc.currentUser = result;
-        uc.userName = uc.currentUser.login;
+        vm.currentUser = result;
+        vm.userName = vm.currentUser.login;
       }, function (e) {
-        console.log(e);
+        $log(e);
       });
     };
 
-    uc.getUsers = function(){
-      usersService.getUsers(uc.id-1).then(function (result) {
-        uc.users = result;
+    vm.getUsers = function(){
+      usersService.getUsers(vm.id-1).then(function (result) {
+        vm.users = result;
       }, function (e) {
-        console.log(e);
+        $log(e);
       });
     };
 
-    if (!uc.userName) {
-      uc.getUsers();
+    if (!vm.userName) {
+      vm.getUsers();
     }
     else{
-      uc.getUser(uc.userName)
+      vm.getUser(vm.userName)
     }
 
   }

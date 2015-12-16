@@ -7,10 +7,10 @@
 
   /** @ngInject */
   function AboutController() {
-    var ac = this;
-    ac.name = "Marcin";
-    ac.surname = "Werkowski";
-    ac.codeAcademyLink="https://www.codecademy.com/wero87#completed"
+    var vm = this;
+    vm.name = "Marcin";
+    vm.surname = "Werkowski";
+    vm.codeAcademyLink="https://www.codecademy.com/wero87#completed"
 
 
   }
