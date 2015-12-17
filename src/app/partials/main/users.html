@@ -5,17 +5,33 @@
         <p ng-if="users.users">select index:
           <input type="number" min="0" ng-model="users.id" ng-change="users.getUsers()"/>
         </p>
-      <ul ng-if="users.users">
-        <li ng-repeat="user in users.users" >
-          <a ng-href="#/users/{{user.login}}">{{user.login}}</a>
-        </li>
-      </ul>
+
+      <div class="mdl-grid">
+
+        <div class="mdl-cell mdl-cell--4-col" ng-repeat="user in users.users | orderBy:'id'">
+          <div class="acme-card-square mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+              <h2 class="mdl-card__title-text">{{ user.login }}</h2>
+            </div>
+            <div class="mdl-card__media">
+              <img ng-src="{{ user.avatar_url }}" alt="{{ user.name }}">
+            </div>
+            <div class="mdl-card__supporting-text">
+              {{ user.name }} {{ user.location }}
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-href="#/users/{{user.login}}">
+                Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
     <div class="mdl-card__actions mdl-card--border">
-
+        Users
     </div>
-    <div class="mdl-card__menu">
 
-    </div>
   </div>
 </div>
