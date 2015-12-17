@@ -27,11 +27,12 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
       <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <!-- Title -->
-          <span class="mdl-layout-title">Patronage</span>
-          <acme-navbar></acme-navbar>
-        </div>
+        <!--<div class="mdl-layout__header-row">-->
+          <!--&lt;!&ndash; Title &ndash;&gt;-->
+          <!--<span class="mdl-layout-title">Patronage</span>-->
+          <!--<acme-navbar></acme-navbar>-->
+        <!--</div>-->
+        <div ui-view="title"></div>
       </header>
 
         <div class="mdl-layout__drawer">
@@ -39,18 +40,14 @@
           <span class="mdl-layout-title">Patronage</span>
           <acme-navbar></acme-navbar>
         </div>
+      <!--<div ui-view="menu"></div>-->
 
       <main class="mdl-layout__content">
-        <div ui-view></div>
-      </main>
-
-      <footer class="mdl-mini-footer">
-        <div class="mdl-mini-footer__right-section">
-          <div class="mdl-logo">
-            With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-          </div>
+        <div ui-view="content">
+          <div ui-view></div>
         </div>
-      </footer>
+      </main>
+      <div ui-view="foot"></div>
 
     </div>
 
