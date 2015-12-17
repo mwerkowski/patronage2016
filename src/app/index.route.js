@@ -14,9 +14,6 @@
           'menu': {
             templateUrl: 'app/partials/menu.html'
           },
-          'title': {
-            templateUrl: 'app/partials/title.html'
-          },
           'content': {},
           'foot': {
             templateUrl: 'app/partials/foot.html'
