@@ -24,7 +24,35 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ui-view></div>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Patronage</span>
+          <acme-navbar></acme-navbar>
+        </div>
+      </header>
+
+        <div class="mdl-layout__drawer">
+          <!-- Title -->
+          <span class="mdl-layout-title">Patronage</span>
+          <acme-navbar></acme-navbar>
+        </div>
+
+      <main class="mdl-layout__content">
+        <div ui-view></div>
+      </main>
+
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__right-section">
+          <div class="mdl-logo">
+            With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
+          </div>
+        </div>
+      </footer>
+
+    </div>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

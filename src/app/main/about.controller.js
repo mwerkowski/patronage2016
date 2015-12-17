@@ -12,9 +12,6 @@
     vm.surname = "Werkowski";
     vm.codeAcademyLink="https://www.codecademy.com/wero87#completed"
 
-
   }
-
-
 
 })();
