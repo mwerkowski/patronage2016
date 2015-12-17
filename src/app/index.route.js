@@ -26,28 +26,28 @@
       .state('home', {
         parent: 'index',
         url: '/',
-        templateUrl: 'app/main/home.html',
+        templateUrl: 'app/partials/main/home.html',
         controller: 'HomeController',
         controllerAs: 'home'
       })
       .state('users', {
         parent: 'index',
         url: '/users?id',
-        templateUrl: 'app/main/users.html',
+        templateUrl: 'app/partials/main/users.html',
         controller: 'UsersController',
         controllerAs: 'users'
       })
       .state('user', {
         parent: 'index',
         url: '/users/:userName',
-        templateUrl: 'app/main/user.html',
+        templateUrl: 'app/partials/main/user.html',
         controller: 'UserController',
         controllerAs: 'user'
       })
       .state('about', {
         parent: 'index',
         url: '/about',
-        templateUrl: 'app/main/about.html',
+        templateUrl: 'app/partials/main/about.html',
         controller: 'AboutController',
         controllerAs: 'about'
       });
