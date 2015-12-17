@@ -54,6 +54,7 @@ main {
   }
 
   > .mdl-card__title {
+    position: absolute;
     color: #fff;
     height: 176px;
     background: url('../assets/images/yeoman.png') center / cover;
@@ -74,6 +75,7 @@ main {
   }
 }
 
+
 .acme-card-square {
   &.mdl-card {
     width: 100%;
@@ -81,18 +83,25 @@ main {
   }
 
   > .mdl-card__title {
+    position: inherit;
     color: #fff;
-    background: #283593;
+    background: rgba(0, 0, 0, 0.51);
   }
 
   > .mdl-card__media {
+    margin-top: -50px;
     color: #fff;
     background: none;
     text-align: center;
     img {
-      height: 100px;
+      height: 100%;
+      width: 100%;
     }
   }
+}
+
+a{
+  color: transparent;
 }
 
 /**
